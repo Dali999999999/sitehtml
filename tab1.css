@@ -1,0 +1,167 @@
+/* Style global de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement haut pour le contenu */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du tableau */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 30px; /* Décalage du tableau vers le bas */
+}
+
+/* Animation de l'apparition du tableau */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style de la légende du tableau */
+caption {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2e3a59;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #f7f8fa;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px; /* Espacement sous le titre */
+}
+
+/* Style des en-têtes de colonnes */
+th {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Style des cellules du tableau */
+td {
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+td:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Effet au survol d'une ligne */
+tr:hover td {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Style des lignes Admis (vert) */
+tr td:nth-child(5):contains('Admis') {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style des lignes Refusé (rouge) */
+tr td:nth-child(5):contains('Refusé') {
+    background-color: #f44336;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style des lignes Enjambement (jaune) */
+tr td:nth-child(5):contains('Enjambement') {
+    background-color: #ffeb3b;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style pour les lignes impaires */
+tr:nth-child(odd) {
+    background-color: #f9fafb;
+}
+
+/* Style pour les lignes paires */
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Bordures et espaces entre les cellules */
+table, th, td {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Espacement entre les lignes */
+tbody tr {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+/* Style du tableau au survol */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des numéros de téléphone (centré et espacé) */
+td:nth-child(4) {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+/* Amélioration de l'alignement du texte */
+td, th {
+    padding: 12px;
+}
+
+/* Mise en valeur du statut dans la dernière colonne */
+td:nth-child(5) {
+    font-weight: bold;
+}
+
+/* Améliorations spécifiques aux champs particuliers */
+th, td {
+    text-align: center;
+}
+
+/* Media queries pour les écrans plus petits */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    caption {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,150 @@
+/* Arrière-plan global de la page */
+body {
+    background: linear-gradient(135deg, #ffb300, #283593); /* Dégradé du roux à l'or */
+    background-size: 200% 200%;
+    background-position: 100% 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    animation: gradient-animation 10s linear infinite; /* Animation du dégradé */
+    overflow: hidden; /* Empêche les barres de défilement si elles apparaissent */
+}
+
+/* Animation de transition fluide du dégradé */
+@keyframes gradient-animation {
+    0% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Texture subtile pour un effet léger */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Texture discrète */
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Style du tableau */
+table {
+    width: 60%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    animation: fadeIn 1s ease-out;
+    margin: 30px auto;
+}
+
+/* Animation de l'apparition du tableau */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Légende du tableau (caption) */
+caption {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    background-color: #f7f7f7;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Style des cellules d'en-tête (th) */
+th {
+    background-color: #3c8d99;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Style des cellules de données (td) */
+td {
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: #333;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol des cellules */
+td:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+}
+
+/* Style des lignes impaires (zébrage) */
+tr:nth-child(odd) td {
+    background-color: #fafafa;
+}
+
+/* Style des lignes paires (zébrage) */
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* Style des cellules spécifiques */
+td[style*="background-color: green"] {
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+}
+
+td[rowspan] {
+    background-color: #3c8d99;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style des bordures du tableau */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Optimisation pour les petits écrans */
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
+    caption {
+        font-size: 1.5em;
+    }
+
+    td, th {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

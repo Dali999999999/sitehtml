@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux - Passagers et Enregistrements</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Si tu veux séparer le CSS -->
+    <style>
+        /* Arrière-plan global de la page */
+        body {
+            background: linear-gradient(135deg, #ffb300, #283593); /* Dégradé du roux à l'or */
+            background-size: 200% 200%;
+            background-position: 100% 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            padding: 20px;
+            overflow: hidden;
+            animation: gradient-animation 10s linear infinite;
+        }
+
+        /* Animation du dégradé */
+        @keyframes gradient-animation {
+            0% {
+                background-position: 100% 100%;
+            }
+            50% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Style des tables */
+        table {
+            width: 80%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #ffffff;
+            
+        }
+
+        caption {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #283593;
+            padding: 10px;
+            text-align: center;
+            background-color: #ffb300;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3c8d99;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        tr:hover {
+            background-color: #e1e1e1;
+        }
+
+        tfoot {
+            background-color: #3c8d99;
+            color: white;
+        }
+
+        /* Effet de survol */
+        tr:hover {
+            background-color: #ffb300;
+            color: #fff;
+        }
+
+        /* Optimisation pour petits écrans */
+        @media (max-width: 768px) {
+            table {
+                width: 95%;
+            }
+
+            caption {
+                font-size: 1.5em;
+            }
+
+            th, td {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Premier tableau : Passagers du vol 3774 -->
+    <table>
+        <caption>Passagers du vol 3774</caption>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Pays</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carmen</td>
+                <td>33 ans</td>
+                <td>Espagne</td>
+            </tr>
+            <tr>
+                <td>Michelle</td>
+                <td>26 ans</td>
+                <td>Etats-Unis</td>
+            </tr>
+            <tr>
+                <td>François</td>
+                <td>43 ans</td>
+                <td>France</td>
+            </tr>
+            <tr>
+                <td>Martine</td>
+                <td>34 ans</td>
+                <td>France</td>
+            </tr>
+            <tr>
+                <td>Jonathan</td>
+                <td>13 ans</td>
+                <td>Australie</td>
+            </tr>
+            <tr>
+                <td>Xu</td>
+                <td>19 ans</td>
+                <td>Chine</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Pays</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Deuxième tableau : Liste des enregistrements -->
+    <table>
+        <caption>Liste des enregistrements</caption>
+        <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Contact</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Martin</td>
+                <td>Jean</td>
+                <td>06 12 34 56 78</td>
+                <td>Validé</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Dupont</td>
+                <td>Sophie</td>
+                <td>06 98 76 54 32</td>
+                <td>En attente</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Lemoine</td>
+                <td>Luc</td>
+                <td>07 11 22 33 44</td>
+                <td>Validé</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Leclerc</td>
+                <td>Amélie</td>
+                <td>06 33 44 55 66</td>
+                <td>En attente</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Numéro</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Contact</th>
+                <th>Statut</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

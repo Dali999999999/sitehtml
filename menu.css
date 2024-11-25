@@ -1,0 +1,374 @@
+/* RESET/BASIC STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+  --white: #ffffff;
+  --light-grey: #edf0f1;
+  --violet: #655be1;
+  --dark-violet: #5146e1;
+  --black: #21232a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 0 20px;
+  background: var(--light-grey);
+  color: var(--white);
+}
+
+.notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background: var(--violet);
+}
+
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  padding-bottom: 20px;
+  border-radius: 5px 5px 25px 25px;
+  margin: 300px auto 0;
+  background: var(--white);
+  box-shadow: rgb(50 50 93 / 10%) 0 30px 60px -12px,
+    rgb(0 0 0 / 15%) 0 18px 36px -18px;
+}
+
+.nav [type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.nav [type="checkbox"] + label {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+  background: var(--violet);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+}
+
+.nav [type="checkbox"] + label:hover {
+  background: var(--dark-violet);
+}
+
+.menu li {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.menu li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.menu li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.menu li:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.menu li:nth-child(4) {
+  transition-delay: 0.05s;
+}
+
+.menu li a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--violet);
+}
+
+.menu li a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-100% - 5px));
+  width: 100%;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.nav input:checked ~ .menu li:nth-child(1) {
+  top: -210px;
+  transition-delay: 0.1s;
+}
+
+.nav input:checked ~ .menu li:nth-child(2) {
+  top: -160px;
+  left: calc(50% - 120px);
+  transition-delay: 0.2s;
+}
+
+.nav input:checked ~ .menu li:nth-child(3) {
+  top: -80px;
+  left: calc(50% - 160px);
+  transition-delay: 0.3s;
+}
+
+.nav input:checked ~ .menu li:nth-child(4) {
+  top: 20px;
+  left: calc(50% - 120px);
+  transition-delay: 0.4s;
+}
+
+.nav input:checked ~ .menu li:nth-child(5) {
+  top: 80px;
+  transition-delay: 0.5s;
+}
+
+.nav input:checked ~ .menu li:nth-child(6) {
+  top: 20px;
+  left: calc(50% + 120px);
+  transition-delay: 0.6s;
+}
+
+.nav input:checked ~ .menu li:nth-child(7) {
+  top: -80px;
+  left: calc(50% + 160px);
+  transition-delay: 0.7s;
+}
+
+.nav input:checked ~ .menu li:nth-child(8) {
+  top: -160px;
+  left: calc(50% + 120px);
+  transition-delay: 0.8s;
+}
+.nav input:checked ~ .menu li a span {
+  opacity: 1;
+  transition-delay: 0.9s;
+}
+
+/* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: fixed;
+  right: 0;
+  bottom: 60px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: var(--black);
+}
+
+.page-footer a {
+  display: flex;
+  margin-left: 4px;
+}
+
+/* Noms sous les icônes */
+.menu li a span {
+  position: absolute;
+  bottom: -20px; /* Réduit l'écart sous l'icône pour que le nom soit juste en dessous */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px; /* Taille des noms */
+  color: var(--black); /* Couleur du texte */
+  text-align: center; /* Centrage du texte */
+  white-space: nowrap; /* Évite les retours à la ligne */
+  opacity: 0; /* Noms invisibles par défaut */
+  transition: opacity 0.3s ease; /* Transition d'apparition des noms */
+}
+
+/* Disposition circulaire des icônes et noms */
+.nav input:checked ~ .menu li:nth-child(1) a span {
+  opacity: 1; /* Rendre visible le nom lorsque l'icône est activée */
+}
+
+.nav input:checked ~ .menu li:nth-child(2) a span {
+  opacity: 1;
+}
+
+.nav input:checked ~ .menu li:nth-child(3) a span {
+  opacity: 1;
+}
+
+.nav input:checked ~ .menu li:nth-child(4) a span {
+  opacity: 1;
+}
+
+/* Disposition des icônes */
+.nav input:checked ~ .menu li:nth-child(1) {
+  top: -150px; /* Position de l'icône au-dessus */
+  left: 50%; /* Centré horizontalement */
+  transform: translateX(-50%);
+}
+
+.nav input:checked ~ .menu li:nth-child(2) {
+  top: -120px;
+  left: calc(50% - 100px);
+}
+
+.nav input:checked ~ .menu li:nth-child(3) {
+  top: -60px;
+  left: calc(50% - 150px);
+}
+
+.nav input:checked ~ .menu li:nth-child(4) {
+  top: 20px;
+  left: calc(50% - 120px);
+}
+
+.nav input:checked ~ .menu li:nth-child(5) {
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav input:checked ~ .menu li:nth-child(6) {
+  top: 20px;
+  left: calc(50% + 120px);
+}
+
+.nav input:checked ~ .menu li:nth-child(7) {
+  top: -60px;
+  left: calc(50% + 150px);
+}
+
+.nav input:checked ~ .menu li:nth-child(8) {
+  top: -120px;
+  left: calc(50% + 100px);
+}
+
+/* Ajout de la visibilité des noms */
+.nav input:checked ~ .menu li a span {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Disposition circulaire des icônes avec moins d'espace */
+.nav input:checked ~ .menu li:nth-child(1) {
+  top: -100px; /* Réduit la distance au-dessus */
+  left: 50%; /* Toujours centré horizontalement */
+  transform: translateX(-50%);
+}
+
+.nav input:checked ~ .menu li:nth-child(2) {
+  top: -80px; /* Réduit la distance */
+  left: calc(50% - 80px); /* Réduit l'écart horizontal */
+}
+
+.nav input:checked ~ .menu li:nth-child(3) {
+  top: -40px; /* Réduit la distance */
+  left: calc(50% - 120px); /* Réduit l'écart horizontal */
+}
+
+.nav input:checked ~ .menu li:nth-child(4) {
+  top: 20px; /* Réduit la distance */
+  left: calc(50% - 80px); /* Réduit l'écart horizontal */
+}
+
+.nav input:checked ~ .menu li:nth-child(5) {
+  top: 60px; /* Réduit la distance */
+  left: 50%; /* Centré horizontalement */
+  transform: translateX(-50%);
+}
+
+.nav input:checked ~ .menu li:nth-child(6) {
+  top: 20px; /* Réduit la distance */
+  left: calc(50% + 80px); /* Réduit l'écart horizontal */
+}
+
+.nav input:checked ~ .menu li:nth-child(7) {
+  top: -40px; /* Réduit la distance */
+  left: calc(50% + 120px); /* Réduit l'écart horizontal */
+}
+
+.nav input:checked ~ .menu li:nth-child(8) {
+  top: -80px; /* Réduit la distance */
+  left: calc(50% + 80px); /* Réduit l'écart horizontal */
+}
+
+/* Réduire la taille des cercles pour un aspect plus compact */
+.menu li a {
+  width: 45px;  /* Taille des cercles plus petite */
+  height: 45px; /* Taille des cercles plus petite */
+}
+
+/* Ajustement de la taille des icônes pour les adapter à la taille réduite des cercles */
+.menu li a i {
+  font-size: 18px;  /* Taille plus petite des icônes */
+}
+
+/* Arrière-plan global de la page */
+body {
+  background: linear-gradient(135deg, #ffb300, #283593); /* Dégradé initial du roux à l'or */
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  margin: 0;
+  animation: gradient-animation 10s linear infinite; /* Animation continue du dégradé */
+}
+
+/* Animation de transition fluide */
+@keyframes gradient-animation {
+  0% {
+    background-position: 100% 100%; /* Départ du dégradé, roux à bleu */
+  }
+  50% {
+    background-position: 0% 0%; /* Milieu de la transition, bleu à or */
+  }
+  100% {
+    background-position: 100% 100%; /* Fin de la transition, retour à la position initiale */
+  }
+}
+
+/* Texture subtile pour un effet léger */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Texture discrète */
+  opacity: 0.1; /* Faible opacité pour effet subtil */
+  pointer-events: none;
+}

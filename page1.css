@@ -1,0 +1,44 @@
+/* Arrière-plan global de la page */
+body {
+  background: linear-gradient(135deg, #ffb300, #283593); /* Dégradé initial du roux à l'or */
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  margin: 0;
+  animation: gradient-animation 10s linear infinite; /* Animation continue du dégradé */
+}
+
+/* Animation de transition fluide */
+@keyframes gradient-animation {
+  0% {
+    background-position: 100% 100%; /* Départ du dégradé, roux à bleu */
+  }
+  50% {
+    background-position: 0% 0%; /* Milieu de la transition, bleu à or */
+  }
+  100% {
+    background-position: 100% 100%; /* Fin de la transition, retour à la position initiale */
+  }
+}
+
+/* Texture subtile pour un effet léger */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Texture discrète */
+  opacity: 0.1; /* Faible opacité pour effet subtil */
+  pointer-events: none;
+}
+#img{
+  border-radius: 50%;
+}

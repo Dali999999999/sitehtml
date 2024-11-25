@@ -1,0 +1,132 @@
+/* Arrière-plan de la page */
+body {
+    background: linear-gradient(135deg, #ffb300, #283593); /* dégradé de couleurs chic */
+    font-family: 'Arial', sans-serif; /* Police élégante et simple */
+    color: #ffffff; /* Texte en blanc pour contraster avec le fond */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Titre principal */
+h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Listes générales */
+ul, ol, dl {
+    margin: 20px auto;
+    padding: 0;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1); /* légère transparence pour donner un effet chic */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+ul li, ol li, dl dt {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+dl dd {
+    margin-left: 20px;
+    font-style: italic;
+}
+
+/* Listes ordonnées */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+/* Listes non ordonnées avec styles différents */
+ul.cercle {
+    list-style-type: circle;
+}
+
+ul.carre {
+    list-style-type: square;
+}
+
+ul.rien {
+    list-style-type: none;
+}
+
+/* Liste avec retrait */
+.retrait {
+    padding-left: 40px;
+}
+
+/* Liste sans retrait */
+.pas_de_retrait {
+    padding-left: 0;
+}
+
+/* Liste ordonnée avec style différent */
+ol.commence_a_zero {
+    list-style-type: decimal-leading-zero;
+}
+
+ol.lettres_minuscules {
+    list-style-type: lower-alpha;
+}
+
+ol.chiffres_romains {
+    list-style-type: upper-roman;
+}
+
+ol.lettres_grecques {
+    list-style-type: lower-greek;
+}
+
+/* Design élégant des éléments de liste */
+ul li, ol li {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond légèrement transparent pour chaque item */
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover, ol li:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* effet au survol */
+}
+
+ul li a, ol li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul li a:hover, ol li a:hover {
+    text-decoration: underline;
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 1.1em;
+    color: #f0f0f0;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Titres supplémentaires */
+h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+/* Emphasis sur certains éléments */
+em {
+    font-style: italic;
+    color: #f1c40f;
+}
